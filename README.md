@@ -69,6 +69,10 @@ npm run build-storybook
 npx orval
 ```
 
+## Codecov Report
+
+[![codecov](https://codecov.io/gh/Chiman2937/create-next-app/graph/badge.svg?token=JMFEM67ZZP)](https://codecov.io/gh/Chiman2937/create-next-app)
+
 ## 폴더 구조
 
 ```
