@@ -1,20 +1,14 @@
+# codecov.yml
+comment:
+  layout: 'reach,diff,flags,files,footer'
+  behavior: default
+  require_changes: false
+
 coverage:
   status:
     project:
       default:
-        target: auto # 자동으로 목표 설정
-        threshold: 1% # 1% 이내 변화는 허용
-        informational: true # 실패해도 PR block 안 함
+        target: auto
     patch:
       default:
-        target: 80% # PR 변경 코드는 80% 목표
-        threshold: 5% # 5% 이내 차이 허용
-
-comment:
-  layout: 'reach, diff, flags, files, footer' # 표시할 섹션들
-  behavior: default # 매번 새 코멘트
-  require_changes: false # 변경사항 없어도 코멘트
-  require_base: false # base 브랜치 데이터 없어도 OK
-  require_head: true # PR 브랜치 데이터 필수
-
-  show_carryforward_flags: true # 플래그 정보 표시
+        target: 80%
