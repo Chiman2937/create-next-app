@@ -6,7 +6,7 @@ coverage:
         threshold: 0%
 
 comment:
-  layout: 'header, files, footer'
+  layout: 'header, diff, files, footer' # 모든 섹션 포함
   behavior: default
   require_changes: false
   require_base: true
