@@ -1,18 +1,18 @@
 comment:
-  layout: " diff, flags, files"  # 앞에 공백 주의!
-  behavior: default
-  require_changes: false
-  require_base: false
-  require_head: true
-  hide_project_coverage: false  # 이거 추가!
+    layout: " diff, flags, files"  # 앞에 공백 주의!
+    behavior: default
+    require_changes: false
+    require_base: false
+    require_head: true
+    hide_project_coverage: false  # 이거 추가!
 
 coverage:
-  status:
-    patch:
-      default:
-        target: auto
-        threshold: 0.1%
-    project:
-      default:
-        target: auto
-        threshold: 70%
+    status:
+        patch:
+        default:
+            target: auto
+            threshold: 0.1%
+        project:
+        default:
+            target: auto
+            threshold: 70%
