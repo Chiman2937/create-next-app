@@ -49,3 +49,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true # 자세한 로그
+          files: coverage/lcov.info
+          flags: project
