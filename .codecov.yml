@@ -14,7 +14,7 @@ coverage:
         informational: false
 
 comment:
-  layout: "diff, flags, files, project"
+  layout: "diff, flags, files, reach, footer"
   behavior: default
   require_changes: false
   require_base: false
