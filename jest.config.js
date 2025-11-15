@@ -16,6 +16,11 @@ const config = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  // 이거 추가
+  testPathIgnorePatterns: ['/node_modules/'],
+  // 중요: 경로 정규화
+  coverageReporters: ['json', 'lcov', 'text', 'clover'],
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.d.ts',
