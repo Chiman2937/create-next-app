@@ -33,7 +33,7 @@ jobs:
       - name: Debug coverage files
         run: |
           echo "=== codecov.yml content ==="
-          cat codecov.yml
+          cat .codecov.yml || cat codecov.yml || echo "No codecov config found"
           echo ""
           echo "=== Coverage files generated ==="
           ls -la coverage/
