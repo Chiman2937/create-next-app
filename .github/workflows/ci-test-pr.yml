@@ -26,7 +26,23 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm run test:coverage
+        run:
+          npm run test:coverage
+
+          # 이 단계 추가
+      - name: Debug coverage files
+        run: |
+          echo "=== codecov.yml content ==="
+          cat codecov.yml
+          echo ""
+          echo "=== Coverage files generated ==="
+          ls -la coverage/
+          echo ""
+          echo "=== clover.xml content (first 100 lines) ==="
+          head -100 coverage/clover.xml
+          echo ""
+          echo "=== lcov.info content (first 50 lines) ==="
+          head -50 coverage/lcov.info
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5
