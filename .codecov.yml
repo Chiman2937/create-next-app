@@ -12,4 +12,11 @@ coverage:
       default:
         target: auto
         threshold: 0%
-        informational: true     # patch는 정보용으로만
+        informational: false
+
+comment:                  # this is a top-level key
+  layout: "diff, flags, files"
+  behavior: default
+  require_changes: false  # learn more in the Requiring Changes section below
+  require_base: false        # [true :: must have a base report to post]
+  require_head: true       # [true :: must have a head report to post]
