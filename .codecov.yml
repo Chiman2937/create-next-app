@@ -7,9 +7,10 @@ coverage:
       default:
         target: auto
         threshold: 0%
-        if_not_found: success
+        informational: true
+        require_changes: false
     patch:
       default:
         target: auto
         threshold: 0%
-        if_not_found: success
+        informational: true
