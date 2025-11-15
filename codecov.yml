@@ -1,5 +1,5 @@
 comment:                  # this is a top-level key
-  layout: "condensed_header, condensed_files, condensed_footer"
+  layout: "condensed_header, diff, condensed_files, condensed_footer"
   behavior: default
   require_changes: false  # learn more in the Requiring Changes section below
   require_base: false        # [true :: must have a base report to post]
