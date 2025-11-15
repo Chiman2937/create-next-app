@@ -44,5 +44,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
-          files: coverage/lcov.info
-          flags: ${{ github.event_name == 'pull_request' && 'patch' || 'project' }}
+          flags: patch,project
