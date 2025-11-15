@@ -11,12 +11,12 @@ jobs:
     name: Run tests and collect coverage
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # merge-base 계산을 위해 전체 history 필요
 
-      - name: Set up Node
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -25,11 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run:
-          npm run test:coverage
+      - name: Run tests with coverage
+        run: npm run test:coverage
 
-          # 이 단계 추가
       - name: Debug coverage files
         run: |
           echo "=== codecov.yml content ==="
@@ -38,16 +36,13 @@ jobs:
           echo "=== Coverage files generated ==="
           ls -la coverage/
           echo ""
-          echo "=== clover.xml content (first 100 lines) ==="
-          head -100 coverage/clover.xml
-          echo ""
           echo "=== lcov.info content (first 50 lines) ==="
           head -50 coverage/lcov.info
 
-      - name: Upload results to Codecov
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          verbose: true # 자세한 로그
+          verbose: true
           files: coverage/lcov.info
-          flags: project
+          flags: ${{ github.event_name == 'pull_request' && 'patch' || 'project' }}
