@@ -1,6 +1,6 @@
 'use client';
 import LazyMotionProvider from '@/providers/LazyMotionProvider';
-import { MSWProvider } from '@/providers/MSWProvider';
+// import { MSWProvider } from '@/providers/MSWProvider';
 import { QueryProvider } from '@/providers/QueryProvider';
 
 interface Props {
@@ -10,9 +10,9 @@ interface Props {
 export const Providers = ({ children }: Props) => {
   return (
     <QueryProvider>
-      <MSWProvider>
-        <LazyMotionProvider>{children}</LazyMotionProvider>
-      </MSWProvider>
+      {/* <MSWProvider> */}
+      <LazyMotionProvider>{children}</LazyMotionProvider>
+      {/* </MSWProvider> */}
     </QueryProvider>
   );
 };
