@@ -1,5 +1,7 @@
 import { redirect } from 'next/navigation';
 
+import { waitClientMSWReady } from '@/lib/msw';
+
 interface BaseAPIConfig {
   url: string;
   method: string;
@@ -10,6 +12,8 @@ interface BaseAPIConfig {
 }
 
 export const httpClient = async <T>(config: BaseAPIConfig): Promise<T> => {
+  await waitClientMSWReady();
+
   const isServer = typeof window === 'undefined';
   const environment = isServer ? '🔵 SERVER' : '🟢 CLIENT';
   const isDev = process.env.NODE_ENV === 'development';
